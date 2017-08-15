@@ -4,6 +4,18 @@ In its simplest form the module consists of a collection of two kinds of blocks:
 Configuration blocks -Only providers and constants can be injected into configuration blocks. 
 This is to prevent accidental instantiation of services before they have been fully configured.
 
+
+angular.module('module', [])
+.config(['$httpProvider','$locationProvider','$routeProvider','$provider','cookieProvider','constant',
+function ($httpProvider,$locationProvider,$routeProvider,$provider,cookieProvider,constant) {
+// provider-injector
+// This is an example of config block.
+// You can have as many of these as you want.
+// You can only inject Providers (not instances)
+// into config blocks.
+}])
+
+
 Look at the following provider, which we can use in our application:
 
 1.) $httpProvider:Use $httpProvider to change the default behavior of the $http service.
@@ -25,7 +37,7 @@ request or postprocessing of responses, it is desirable to be able to intercept 
 responses before they are handed over to the application code that initiated these requests. The interceptors leverage the promise 
 APIs to fulfill this need for both synchronous and asynchronous pre-processing.
 
-[Lets go to Quora](https://www.quora.com)
+
 
 
 2.) $locationProvider
@@ -34,15 +46,6 @@ APIs to fulfill this need for both synchronous and asynchronous pre-processing.
 5.) User defined Provider
 6.) Constant
 
-angular.module('module', [])
-.config(['$httpProvider','$locationProvider','$routeProvider','$provider','cookieProvider','constant',
-function ($httpProvider,$locationProvider,$routeProvider,$provider,cookieProvider,constant) {
-// provider-injector
-// This is an example of config block.
-// You can have as many of these as you want.
-// You can only inject Providers (not instances)
-// into config blocks.
-}])
 
 Run blocks - get executed after the injector is created and are used to kickstart the application. 
 Only instances and constants can be injected into run blocks. 
