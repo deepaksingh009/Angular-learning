@@ -1,0 +1,16 @@
+Syntax for module:
+
+var app;
+app=angular.module('appmodule',[]);
+
+Syntax for controller:
+
+app.controller('myctlr',function($scope){
+
+});
+
+syntax for simple method in controller:
+
+$scope.MethodName=funtion(){
+};
+
