@@ -7,6 +7,9 @@ This is to prevent accidental instantiation of services before they have been fu
 Look at the following provider, which we can use in our application:
 
 1.) $httpProvider:Use $httpProvider to change the default behavior of the $http service.
+There are two type of properties for $httpProvider:
+
+Default-:
 
 defaults.cache - {boolean|Object} - A boolean value or object created with $cacheFactory to enable or disable caching of HTTP responses by default. See $http Caching for more information.
 
@@ -16,6 +19,12 @@ defaults.headers.common
 defaults.headers.post
 defaults.headers.put
 defaults.headers.patch
+
+interceptors:-For purposes of global error handling, authentication, or any kind of synchronous or asynchronous pre-processing of 
+request or postprocessing of responses, it is desirable to be able to intercept requests before they are handed to the server and 
+responses before they are handed over to the application code that initiated these requests. The interceptors leverage the promise 
+APIs to fulfill this need for both synchronous and asynchronous pre-processing.
+<a href="http://en.wikipedia.org/wiki/Petersen_graph">Petersen Graph</a>
 
 
 2.) $locationProvider
